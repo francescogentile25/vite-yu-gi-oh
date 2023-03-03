@@ -1,6 +1,8 @@
 
 <template>
-    <Card v-for="card in store.cards" :key="card.id" :card="card"></Card>
+    <div class="cards d-flex  flex-wrap gap-5 p-4">
+        <Card v-for="card in store.cards" :key="card.id" :card="card"></Card>
+    </div>
 </template>
 
 <script>
