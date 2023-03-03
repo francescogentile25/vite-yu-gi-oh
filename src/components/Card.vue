@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width:300px" v-for="(card, i)  in cards" key="i">
+    <div class="card" style="width:300px">
         <img :src="card.card_images[0].image_url" class="card-img-top" alt="...">
         <div class="card-body">
             <h3 class="card-text text-center">{{ card.name }}</h3>

@@ -1,19 +1,12 @@
 
 <template>
-    <!-- <div class="card" style="width:300px" v-for="(card, i)  in cards" key="i">
-        <img :src="card.card_images[0].image_url" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h3 class="card-text text-center">{{ card.name }}</h3>
-            <p class="card-text text-center">{{ card.type }}</p>
-        </div>
-            </div> -->
-    <Card v-for="card in cards" :key="card.id" :card="card"></Card>
+    <Card v-for="card in store.cards" :key="card.id" :card="card"></Card>
 </template>
 
 <script>
 import axios from 'axios'
 import Card from './Card.vue'
-// import store from '../store'
+import store from '../store'
 export default {
     components: {
         Card,
@@ -21,16 +14,16 @@ export default {
     data() {
         return {
 
-            // store,
+            store,
         }
     },
     methods: {
         fetchCard() {
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=3641')
                 .then((res) => {
                     console.log(res.data.data)
-                    this.cards = res.data.data
+                    this.store.cards = res.data.data
                 })
         }
     },
