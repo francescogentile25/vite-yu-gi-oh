@@ -1,20 +1,13 @@
 
 <template>
-    <!-- <div>
-        <li v-for="(card, i)  in cards" key="i">
-            <img :src="card.card_images[0].image_url" alt="">
-            <p>{{ card.name }}</p>
-        </li>
-        </div> -->
-
-    <div class="card" style="width:300px" v-for="(card, i)  in cards" key="i">
+    <!-- <div class="card" style="width:300px" v-for="(card, i)  in cards" key="i">
         <img :src="card.card_images[0].image_url" class="card-img-top" alt="...">
         <div class="card-body">
             <h3 class="card-text text-center">{{ card.name }}</h3>
             <p class="card-text text-center">{{ card.type }}</p>
         </div>
-    </div>
-    <Card></Card>
+            </div> -->
+    <Card v-for="card in cards" :key="card.id" :card="card"></Card>
 </template>
 
 <script>
@@ -27,7 +20,7 @@ export default {
     },
     data() {
         return {
-            cards: []
+
             // store,
         }
     },
