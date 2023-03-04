@@ -1,7 +1,11 @@
 
 <template>
-    <div class="cards d-flex  flex-wrap gap-5 p-4">
-        <Card v-for="card in store.cards" :key="card.id" :card="card"></Card>
+    <div class="body">
+        <p class="text-white fs-2 text-center fw-bold"> Hai trovato: <span class="text-danger">{{ store.cards.length
+        }}</span> carte</p>
+        <div class="cards container ">
+            <Card v-for="card in store.cards" :key="card.id" :card="card"></Card>
+        </div>
     </div>
 </template>
 
@@ -34,4 +38,16 @@ export default {
     },
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.body {
+    background-image: url(https://www.shutterstock.com/shutterstock/photos/1922447285/display_1500/stock-photo-le-n-guanajuato-mexico-february-back-view-of-random-cards-of-trading-game-yu-gi-oh-1922447285.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
-    <div class="card" style="width:300px">
+    <div class="card border-0">
         <img :src="card.card_images[0].image_url" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body bg-dark text-white ">
             <h3 class="card-text text-center">{{ card.name }}</h3>
             <p class="card-text text-center">{{ card.type }}</p>
         </div>
