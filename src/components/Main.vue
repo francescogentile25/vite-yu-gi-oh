@@ -28,7 +28,8 @@ export default {
     methods: {
         fetchCard() {
             const search = this.store.search
-            const numberOfResult = this.store.numberOfResult
+            let numberOfResult = this.store.numberOfResult
+            console.log(numberOfResult)
             axios
                 .get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${search}&num=${numberOfResult}&offset=0`)
                 .then((res) => {
@@ -38,6 +39,7 @@ export default {
                 .catch((error) => {
                     console.log(error)
                     // this.store.numberOfResult = 20
+                    // numberOfResult = '20'
                 })
         }
     },
