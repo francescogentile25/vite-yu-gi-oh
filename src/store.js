@@ -5,6 +5,6 @@ const store = reactive({
     name: '',
     type: '',
     search: '',
-
+    numberOfResult: ''
 })
 export default store

@@ -2,6 +2,8 @@
     <div>
         <input type="text" placeholder="cerca una carta" class="form-control-lg" @keyup.enter="$emit('onSearch')"
             v-model="store.search">
+        <input type="text" placeholder="quanti risultati vuoi visualizzare" class="form-control-lg"
+            @keyup.enter="$emit('onSearch')" v-model="store.numberOfResult">
     </div>
 </template>
 
