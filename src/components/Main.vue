@@ -1,7 +1,7 @@
 
 <template>
     <div class="body">
-        <Search @onSearch="fetchCard"></Search>
+        <Search class="search-button" @onSearch="fetchCard"></Search>
         <p class=" fs-2 text-center fw-bold"> Hai trovato: <span class="text-danger">{{ store.cards.length
         }}</span> carte</p>
         <div class="cards container ">
@@ -35,6 +35,10 @@ export default {
                     console.log(res.data.data)
                     this.store.cards = res.data.data
                 })
+                .catch((error) => {
+                    console.log(error)
+                    // this.store.numberOfResult = 20
+                })
         }
     },
     created() {
@@ -53,5 +57,11 @@ export default {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
+}
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
 }
 </style>
