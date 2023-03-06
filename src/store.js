@@ -4,7 +4,7 @@ const store = reactive({
     img: '',
     name: '',
     type: '',
-    search: 'ciao',
+    search: '',
 
 })
 export default store
