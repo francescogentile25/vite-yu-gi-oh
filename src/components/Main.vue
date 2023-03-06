@@ -1,7 +1,7 @@
 
 <template>
     <div class="body">
-        <Serch>Ciao</Serch>
+        <Search @onSearch="fetchCard"></Search>
         <p class=" fs-2 text-center fw-bold"> Hai trovato: <span class="text-danger">{{ store.cards.length
         }}</span> carte</p>
         <div class="cards container ">
@@ -14,22 +14,22 @@
 import axios from 'axios'
 import Card from './Card.vue'
 import store from '../store'
-import Serch from './Serch.vue'
+import Search from './Search.vue'
 export default {
     components: {
         Card,
-        Serch,
+        Search,
     },
     data() {
         return {
-
             store,
         }
     },
     methods: {
         fetchCard() {
+            const search = this.store.search
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+                .get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0?fname=${search}`)
                 .then((res) => {
                     console.log(res.data.data)
                     this.store.cards = res.data.data
